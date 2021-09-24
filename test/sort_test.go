@@ -6,21 +6,21 @@ import (
 	"testing"
 )
 
-type params struct {
+type TestMergeSortParams struct {
 	Params1 []int
 	Params2 []int
 	Result  []int
 }
 
 func TestMergeSort(t *testing.T) {
-	var allParams []params
-	test1 := params{
+	var allParams []TestMergeSortParams
+	test1 := TestMergeSortParams{
 		Params1: []int{0},
 		Params2: []int{5},
 		Result:  []int{0, 5},
 	}
 
-	test2 := params{
+	test2 := TestMergeSortParams{
 		Params1: []int{1, 3, 5},
 		Params2: []int{4, 5, 6},
 		Result:  []int{1, 3, 4, 5, 5, 6},
