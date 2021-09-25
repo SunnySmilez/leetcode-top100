@@ -6,13 +6,13 @@ import (
 	"testing"
 )
 
-type AddTwoNumParams struct {
-	Params1 *algo.ListNode
-	Params2 *algo.ListNode
-	Result  []int
-}
-
 func TestAddTwoNum(t *testing.T) {
+	type params struct {
+		Params1 *algo.ListNode
+		Params2 *algo.ListNode
+		Result  []int
+	}
+
 	//输入：l1 = [2,4,3], l2 = [5,6,4] 输出：[7,0,8]
 	l1_1 := &algo.ListNode{
 		Val:  3,
@@ -109,7 +109,7 @@ func TestAddTwoNum(t *testing.T) {
 		Next: l6_3,
 	}
 
-	params := []AddTwoNumParams{
+	testArr := []params{
 		{ //输入：l1 = [2,4,3], l2 = [5,6,4] 输出：[7,0,8]
 			Params1: l1,
 			Params2: l2,
@@ -127,7 +127,7 @@ func TestAddTwoNum(t *testing.T) {
 		},
 	}
 
-	for k, v := range params {
+	for k, v := range testArr {
 		res := algo.AddTwoNumbers(v.Params1, v.Params2)
 		resSlice := make([]int, len(v.Result), cap(v.Result))
 		i := 0
