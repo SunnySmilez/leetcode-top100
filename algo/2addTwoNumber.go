@@ -1,5 +1,7 @@
 package algo
 
+import "algo/algo/common"
+
 //2. 两数相加:https://leetcode-cn.com/problems/add-two-numbers/
 /*
 给你两个 非空 的链表，表示两个非负的整数。它们每位数字都是按照 逆序 的方式存储的，并且每个节点只能存储 一位 数字。
@@ -18,13 +20,9 @@ package algo
 输入：l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
 输出：[8,9,9,9,0,0,0,1]
 */
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
 
-func AddTwoNumbers(l1, l2 *ListNode) (head *ListNode) {
-	var tail *ListNode
+func AddTwoNumbers(l1, l2 *common.ListNode) (head *common.ListNode) {
+	var tail *common.ListNode
 	carry := 0
 	for l1 != nil || l2 != nil {
 		v1, v2 := 0, 0
@@ -42,13 +40,13 @@ func AddTwoNumbers(l1, l2 *ListNode) (head *ListNode) {
 		sum := v1 + v2 + carry
 		num, carry = sum%10, sum/10
 		if head == nil {
-			head = &ListNode{
+			head = &common.ListNode{
 				Val:  num,
 				Next: nil,
 			}
 			tail = head
 		} else {
-			tail.Next = &ListNode{
+			tail.Next = &common.ListNode{
 				Val:  num,
 				Next: nil,
 			}
@@ -57,7 +55,7 @@ func AddTwoNumbers(l1, l2 *ListNode) (head *ListNode) {
 	}
 
 	if carry > 0 {
-		tail.Next = &ListNode{Val: carry}
+		tail.Next = &common.ListNode{Val: carry}
 	}
 
 	return head
