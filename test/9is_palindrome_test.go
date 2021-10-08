@@ -2,7 +2,6 @@ package test
 
 import (
 	"algo/algo"
-	"fmt"
 	"testing"
 )
 
@@ -44,19 +43,4 @@ func TestIsPalindrome(t *testing.T) {
 			t.Errorf("Case:%d,params: %d,Expected:%t,Got:%t", k, v.Params, v.Result, res)
 		}
 	}
-}
-
-func TestSingle1(t *testing.T) {
-	type params struct {
-		Params int
-		Result bool
-	}
-
-	testP5 := params{
-		Params: 123,
-		Result: false,
-	}
-
-	res := algo.IsPalindrome(testP5.Params)
-	fmt.Print(res)
 }
