@@ -1,7 +1,7 @@
-package test
+package hot100
 
 import (
-	"algo/algo"
+	"algo/algo/hot100"
 	"reflect"
 	"testing"
 )
@@ -33,7 +33,7 @@ func TestTwoNumberSum(t *testing.T) {
 
 	testArr := []params{testP1, testP2, testP3}
 	for k, v := range testArr {
-		res := algo.TwoNumberSum(v.Params1, v.Params2)
+		res := hot100.TwoNumberSum(v.Params1, v.Params2)
 		if reflect.DeepEqual(res, v.Result) == false {
 			t.Error("Case:", k, "Error, Expected:", v.Result, ",Got:", res)
 		}

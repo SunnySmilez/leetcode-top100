@@ -1,7 +1,7 @@
-package test
+package hot100
 
 import (
-	"algo/algo"
+	"algo/algo/hot100"
 	"testing"
 )
 
@@ -43,7 +43,7 @@ func TestLongSubString(t *testing.T) {
 	testArr := []params{testP1, testP2, testP3, testP4, testP5, testP6}
 
 	for k, v := range testArr {
-		res := algo.LongSubString(v.Params)
+		res := hot100.LongSubString(v.Params)
 		if res != v.Result {
 			t.Error("Case:", k, "Error, Expected:", v.Result, ",Got:", res)
 			break

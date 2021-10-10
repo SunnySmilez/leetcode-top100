@@ -1,8 +1,8 @@
-package test
+package hot100
 
 import (
-	"algo/algo"
 	"algo/algo/common"
+	"algo/algo/hot100"
 	"reflect"
 	"testing"
 )
@@ -45,7 +45,7 @@ func TestAddTwoNum(t *testing.T) {
 	}
 
 	for k, v := range testArr {
-		res := algo.AddTwoNumbers(v.Params1, v.Params2)
+		res := hot100.AddTwoNumbers(v.Params1, v.Params2)
 		resSlice := make([]int, len(v.Result), cap(v.Result))
 		i := 0
 		for res != nil {

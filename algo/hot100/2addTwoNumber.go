@@ -1,4 +1,4 @@
-package algo
+package hot100
 
 import "algo/algo/common"
 

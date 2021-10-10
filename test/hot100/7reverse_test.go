@@ -1,7 +1,7 @@
-package test
+package hot100
 
 import (
-	"algo/algo"
+	"algo/algo/hot100"
 	"testing"
 )
 
@@ -49,7 +49,7 @@ func TestReverse(t *testing.T) {
 	testArr := []params{testP1, testP2, testP3, testP4, testP5, testP6, testP7}
 
 	for k, v := range testArr {
-		res := algo.Reverse(v.Params1)
+		res := hot100.Reverse(v.Params1)
 		if res != v.Result {
 			t.Errorf("Case:%d,params: %d,Expected:%d,Got:%d", k, v.Params1, v.Result, res)
 			break

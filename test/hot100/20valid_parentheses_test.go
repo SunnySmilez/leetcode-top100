@@ -1,7 +1,7 @@
-package test
+package hot100
 
 import (
-	"algo/algo"
+	"algo/algo/hot100"
 	"testing"
 )
 
@@ -69,7 +69,7 @@ func TestIsValid(t *testing.T) {
 
 	testArr := []params{testP1, testP2, testP3, testP4, testP5, testP6, testP7}
 	for k, v := range testArr {
-		res := algo.IsValid(v.Params)
+		res := hot100.IsValid(v.Params)
 		if res != v.Result {
 			t.Errorf("Case:%d, params: %s, Expected:%t, Got:%t", k, v.Params, v.Result, res)
 		}

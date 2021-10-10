@@ -1,7 +1,7 @@
-package test
+package hot100
 
 import (
-	"algo/algo"
+	"algo/algo/hot100"
 	"testing"
 )
 
@@ -38,7 +38,7 @@ func TestIsPalindrome(t *testing.T) {
 	testArr := []params{testP1, testP2, testP3, testP4, testP5}
 
 	for k, v := range testArr {
-		res := algo.IsPalindrome(v.Params)
+		res := hot100.IsPalindrome(v.Params)
 		if res != v.Result {
 			t.Errorf("Case:%d,params: %d,Expected:%t,Got:%t", k, v.Params, v.Result, res)
 		}

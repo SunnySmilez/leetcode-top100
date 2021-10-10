@@ -1,8 +1,8 @@
-package test
+package hot100
 
 import (
-	"algo/algo"
 	"algo/algo/common"
+	"algo/algo/hot100"
 	"reflect"
 	"testing"
 )
@@ -48,7 +48,7 @@ func TestMergeTwoLists(t *testing.T) {
 	testArr := []Params{testP1, testP2, testP3}
 
 	for k, v := range testArr {
-		res := algo.MergeTwoLists(v.Params1, v.Params2)
+		res := hot100.MergeTwoLists(v.Params1, v.Params2)
 		if reflect.DeepEqual(res, v.Result) == false {
 			t.Errorf("Case:%d, params1: %+v, params2: %+v, Expected:%+v, Got:%+v", k, v.Params1, v.Params2, v.Result, res)
 		}
