@@ -1,5 +1,9 @@
 package dynamicProgramming
 
+import (
+	"math"
+)
+
 /*
 322. 零钱兑换 https://leetcode-cn.com/problems/coin-change/
 
@@ -37,6 +41,25 @@ package dynamicProgramming
 1 <= coins[i] <= 231 - 1
 0 <= amount <= 104
 */
-func CoinChange(coins []int, amount int) int {
-	return 0
+func CoinChangeDp(coins []int, amount int) int {
+	dp := map[int]float64{
+		0: 0,
+	}
+
+	for i := 1; i <= amount; i++ {
+		dp[i] = float64(amount + 1)
+		for _, coin := range coins {
+			if i-coin < 0 {
+				continue
+			}
+
+			dp[i] = math.Min(dp[i], 1+dp[i-coin])
+		}
+	}
+
+	if dp[amount] == float64(amount+1) {
+		return -1
+	}
+
+	return int(dp[amount])
 }

@@ -5,10 +5,20 @@ import (
 	"testing"
 )
 
-func TestCoinChange(t *testing.T) {
+/*func TestCoinChange(t *testing.T) {
 	testArr := getTestArr322()
 	for k, v := range testArr {
 		res := dynamicProgramming.CoinChange(v.Params1, v.Params2)
+		if res != v.Result {
+			t.Errorf("Case:%d,params1: %+v, params2: %d,Expected:%d,Got:%d", k, v.Params1, v.Params2, v.Result, res)
+		}
+	}
+}*/
+
+func TestCoinChangeDp(t *testing.T) {
+	testArr := getTestArr322()
+	for k, v := range testArr {
+		res := dynamicProgramming.CoinChangeDp(v.Params1, v.Params2)
 		if res != v.Result {
 			t.Errorf("Case:%d,params1: %+v, params2: %d,Expected:%d,Got:%d", k, v.Params1, v.Params2, v.Result, res)
 		}
