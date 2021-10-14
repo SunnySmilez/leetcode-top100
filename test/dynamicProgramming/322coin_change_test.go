@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-/*func TestCoinChange(t *testing.T) {
+func TestCoinChange(t *testing.T) {
 	testArr := getTestArr322()
 	for k, v := range testArr {
 		res := dynamicProgramming.CoinChange(v.Params1, v.Params2)
@@ -13,7 +13,7 @@ import (
 			t.Errorf("Case:%d,params1: %+v, params2: %d,Expected:%d,Got:%d", k, v.Params1, v.Params2, v.Result, res)
 		}
 	}
-}*/
+}
 
 func TestCoinChangeDp(t *testing.T) {
 	testArr := getTestArr322()
@@ -62,5 +62,19 @@ func getTestArr322() []params322 {
 		Result:  2,
 	}
 
-	return []params322{testP1, testP2, testP3, testP4, testP5}
+	// 会超时 dict 可解决
+	testP6 := params322{
+		Params1: []int{1, 2, 5},
+		Params2: 100,
+		Result:  20,
+	}
+
+	//
+	testP7 := params322{
+		Params1: []int{186, 419, 83, 408},
+		Params2: 6249,
+		Result:  20,
+	}
+
+	return []params322{testP1, testP2, testP3, testP4, testP5, testP6, testP7}
 }

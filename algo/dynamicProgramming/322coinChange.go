@@ -1,8 +1,6 @@
 package dynamicProgramming
 
-import (
-	"math"
-)
+import "math"
 
 /*
 322. 零钱兑换 https://leetcode-cn.com/problems/coin-change/
@@ -41,6 +39,42 @@ import (
 1 <= coins[i] <= 231 - 1
 0 <= amount <= 104
 */
+func CoinChange(coins []int, n int) int {
+	dict := map[int]int{}
+	return coinChangeMemo(dict, coins, n)
+}
+
+func coinChangeMemo(dp map[int]int, coins []int, n int) int {
+	if n == 0 {
+		return 0
+	}
+
+	if n < 0 {
+		return -1
+	}
+
+	if v, ok := dp[n]; ok == true {
+		return v
+	}
+
+	res := math.MaxFloat64
+	for _, coin := range coins {
+		subProblem := coinChangeMemo(dp, coins, n-coin)
+		if subProblem == -1 {
+			continue
+		}
+
+		res = math.Min(res, float64(1+subProblem))
+		dp[n] = int(res)
+	}
+
+	if res == math.MaxFloat64 {
+		return -1
+	}
+
+	return int(res)
+}
+
 func CoinChangeDp(coins []int, amount int) int {
 	dp := map[int]float64{
 		0: 0,
