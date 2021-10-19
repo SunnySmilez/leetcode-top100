@@ -54,7 +54,7 @@ func TestMaxSubArray(t *testing.T) {
 	testArr := []params{testP1, testP2, testP3, testP4, testP5, testP6, testP7, testP8}
 
 	for k, v := range testArr {
-		res := hot100.MaxSubArray(v.Params)
+		res := hot100.MaxSubArr(v.Params)
 		if res != v.Result {
 			t.Errorf("Case:%d,params: %+v,Expected:%d,Got:%d", k, v.Params, v.Result, res)
 			break
