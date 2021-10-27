@@ -1,6 +1,8 @@
 package hot100
 
-import "algo/algo/common"
+import (
+	"algo/algo/common"
+)
 
 /*
 94. 二叉树的中序遍历:https://leetcode-cn.com/problems/binary-tree-inorder-traversal/
@@ -47,6 +49,22 @@ import "algo/algo/common"
  *     Right *TreeNode
  * }
  */
-func InorderTraversal(root *common.TreeNode) []int {
-	return []int{}
+// 注意：此处[]int 不好做append，直接使用匿名函数做全局的[]int
+func InorderTraversal(root *common.TreeNode) (res []int) {
+	var travel func(node *common.TreeNode)
+
+	travel = func(node *common.TreeNode) {
+		if node == nil {
+			return
+		}
+
+		travel(node.Left)
+		res = append(res, node.Val)
+
+		travel(node.Right)
+	}
+
+	travel(root)
+
+	return
 }
