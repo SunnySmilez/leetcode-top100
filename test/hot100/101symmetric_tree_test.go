@@ -3,7 +3,6 @@ package hot100
 import (
 	"algo/algo/common"
 	"algo/algo/hot100"
-	"reflect"
 	"testing"
 )
 
@@ -11,7 +10,7 @@ func TestIsSymmetric(t *testing.T) {
 	testArr := getTestArr101()
 	for k, v := range testArr {
 		res := hot100.IsSymmetric(v.Params)
-		if reflect.DeepEqual(res, v.Result) == false {
+		if res != v.Result {
 			t.Errorf("Case:%d, params:%+v, Expected:%+v, Got:%+v", k, v.Params, v.Result, res)
 		}
 	}
