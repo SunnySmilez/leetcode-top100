@@ -26,6 +26,35 @@ func NewListNode(arr []int) *ListNode {
 	return head.Next
 }
 
+//根据数组返回单向链表
+func NewCycleListNode(arr []int, pos int) *ListNode {
+	var head ListNode
+	var pre ListNode
+	arrNode := []*ListNode{}
+
+	for _, num := range arr {
+		node := ListNode{Val: num, Next: nil}
+		arrNode = append(arrNode, &node)
+
+		if head.Next == nil {
+			head.Next = &node
+		}
+
+		if pre.Next == nil {
+			pre.Next = &node
+		} else {
+			pre.Next.Next = &node
+			pre = *pre.Next
+		}
+	}
+
+	if pos != -1 {
+		arrNode[len(arr)-1].Next = arrNode[pos]
+	}
+
+	return head.Next
+}
+
 //二叉树节点定义
 type TreeNode struct {
 	Val   int
@@ -47,4 +76,12 @@ func (t *TreeNode) SetRChild(n *TreeNode) {
 
 func (t *TreeNode) SetLChild(n *TreeNode) {
 	t.Left = n
+}
+
+func Max(a, b int) int {
+	if a > b {
+		return a
+	}
+
+	return b
 }
