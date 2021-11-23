@@ -2,7 +2,6 @@ package hot100
 
 import (
 	"algo/algo/common"
-	"fmt"
 )
 
 /*
@@ -17,24 +16,22 @@ import (
       4   5
 返回 3, 它的长度是路径 [4,2,1,3] 或者 [5,2,1,3]。
 */
-var ans int
+
+var m int
 
 func DiameterOfBinaryTree(root *common.TreeNode) int {
-	a := travel461(root)
-
-	fmt.Printf("ans:%d", ans, "max:%d", a)
-	return ans
+	return depth(root)
 }
 
-func travel461(root *common.TreeNode) int {
+func depth(root *common.TreeNode) int {
 	if root == nil {
 		return 0
 	}
 
-	L := travel461(root.Left)
-	R := travel461(root.Right)
+	L := depth(root.Left)
+	R := depth(root.Right)
+	m = max(L+R+1, m)
 
-	ans = max(L+R, ans)
 	return max(L, R) + 1
 }
 
