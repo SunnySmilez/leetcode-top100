@@ -4,8 +4,23 @@
 2. 两链表相加
 2addTwoNumber
 
+206. 反转链表
+206reverseLinkedList
+
+7. 整数反转
+7reverse
+
+141. 环形链表
+141linkedListCycle
+
+160. 相交链表
+160intersectionOfTwoLinkedLists
+
 3. 无重复字符的最长子串
 3longSubstring
+
+226. 翻转二叉树
+226invertBinaryTree
 
 4. 两数组的中位数
 4median
@@ -15,9 +30,6 @@
 
 6. Z字形变换
 6convert
-
-7. 整数反转
-7reverse
 
 9. 判断是否回文子串
 9isPalindrome
@@ -49,23 +61,11 @@
 136. 只出现一次的数字
 136singleNumber
 
-141. 环形链表
-141linkedListCycle
-
 155. 最小栈
 155minStack
 
-160. 相交链表
-160intersectionOfTwoLinkedLists
-
 169. 多数元素
 169majorityElement
-
-206. 反转链表
-206reverseLinkedList
-
-226. 翻转二叉树
-226invertBinaryTree
 
 234. 回文链表
 234palindromeLinkedList
