@@ -1,9 +1,10 @@
-package sort
+package interview
 
 import (
 	"sync"
 )
 
+// 多线程顺序输出abc
 func Concurrent() {
 	var wg sync.WaitGroup
 	wg.Add(3)
