@@ -8,6 +8,18 @@ package sort
 * @return mixed
  */
 
-func Insert(nums []int) (res []int) {
-	return
+func Insert(nums []int) []int {
+	num := len(nums)
+
+	for i := 1; i < num; i++ {
+		for k := i - 1; k >= 0; k-- {
+			if nums[k] < nums[i] {
+				tmp := nums[i]
+				nums[k] = tmp
+				nums[k+1] = nums[k]
+			}
+		}
+	}
+
+	return nums
 }

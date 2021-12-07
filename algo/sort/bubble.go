@@ -7,7 +7,7 @@ package sort
 */
 func Bubble(nums []int) []int {
 	var hasSortFlag bool
-	sortBorder, lastExchangeIndex := len(nums)-1, len(nums)-1
+	sortBorder, lastExchangeIndex := len(nums)-1, 0
 	for i := 0; i < len(nums)-1; i++ {
 		hasSortFlag = true
 		for k := 0; k < sortBorder; k++ {
